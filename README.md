@@ -48,7 +48,16 @@ It uses:
     ```
     then just log in with the default user or register one. 
 
+### Screenshots
 ![Index](screenshots/index.png)
+![Login](screenshots/login.png)
+![Register](screenshots/register.png)
+![Home](screenshots/home.png)
+![User](screenshots/user.png)
+![Edit](screenshots/edit.png)
+![Create](screenshots/create.png)
+![Skins and Layout](screenshots/skins.png)
+
 
 
 **I hope you enjoy it.**
