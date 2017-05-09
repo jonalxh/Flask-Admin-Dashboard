@@ -48,4 +48,7 @@ It uses:
     ```
     then just log in with the default user or register one. 
 
+![Index](jonalxh.github.com/Flask-Admin-Dashboard/screenshots/index.png)
+
+
 **I hope you enjoy it.**
