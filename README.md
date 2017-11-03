@@ -1,6 +1,6 @@
 # Flask-Admin Dashboard Example
 
-I've passed hours looking for a flask-admin example which implements a bootstrap dashboard template, but i can't, finally I decided to create this basic dashboard app (skeleton), it has:
+Basic dashboard app (skeleton), with boostrap 3.7 template and Flask Admin it has:
 
 - User Registration
 - Log in as general or admin user
