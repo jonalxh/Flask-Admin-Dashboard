@@ -1,17 +1,17 @@
 # Flask-Admin Dashboard Example
 
-Basic dashboard app (skeleton), with boostrap 3.7 template and Flask Admin it has:
+Basic dashboard app with Admin LTE template and Flask Admin, it has:
 
 - User Registration
-- Log in as general or admin user
+- Login as general or admin user
 - Roles creation
 - Organize menu items at left in a vertical menu
-- Modern view with a top navbar where you can place notifications
+- Modern view with a navbar top where you can place notifications
 - Menu Hide onclick
 - Create form in modal window by default
 - Inline editing enabled by default
 - Skins and  layout customization
-- Home page has charts, chat and calendar examples 
+- Dashboard, charts, chat and calendar examples
  
 It uses: 
 
