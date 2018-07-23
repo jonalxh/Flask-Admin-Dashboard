@@ -4,16 +4,13 @@ Basic dashboard app with Admin LTE template and Flask Admin, it has:
 
 - User Registration
 - Login as general or admin user
-- Roles creation
-- Organize menu items at left in a vertical menu
-- Modern view with a navbar top where you can place notifications
-- Menu Hide onclick
+- Roles management
 - Create form in modal window by default
 - Inline editing enabled by default
 - Skins and  layout customization
 - Dashboard, charts, chat and calendar examples
  
-It uses: 
+Utilities: 
 
   - AdminLTE Bootstrap template
   - Flask-Security
@@ -30,19 +27,20 @@ It uses:
     ```
 - Create and activate a virtual environment:
     ```sh
-    $ virtualenv env
-    $ source env/bin/activate
+    $ virtualenv venv
+    $ source venv/bin/activate
     ```
 - Install the requirements inside the app folder
     ```sh
-    $ sudo pip install -r requirements.txt
+    $ pip install -r requirements.txt
     ```
-- Once the process finishes just execute the app.py file
+- Once the process finishes give execution permission to app.py file and run it
     ```sh
-    $ python app.py
+    $ chmod +x app.py
+    $ ./app.py
     ```
 - The first execution will create automatically a sample sqlite database.
-- Open your prefered browser and type
+- Open your favorite browser and type
     ```
     localhost:5000/admin
     ```

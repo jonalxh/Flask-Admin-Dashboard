@@ -17,7 +17,7 @@
   <!-- Bootstrap 3.3.6 -->
   <link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet"></link>
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
@@ -391,12 +391,11 @@
   <div class="control-sidebar-bg"></div>
 
   <footer class="main-footer">
+     <strong>Copyright &copy; 2018 <a href="https://github.com/jonalxh">Jonathan Arias</a></strong> -
+    <strong>Admin LTE Template <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
     <div class="pull-right hidden-xs">
-      <b>Version</b> 0.1
+      <b>Version</b> 0.2
     </div>
-     <strong>Copyright &copy; 2017 <a href="https://github.com/jonalxh">Jonathan Ars</a>.</strong> -
-    <strong>Original Template <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
-    reserved.
   </footer>
   {% endif %}
 
@@ -450,7 +449,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{url_for('static',filename='js/demo.js')}}"></script>
 {% if admin_view.name=="Home" %}
-<script src="{{url_for('static',filename='js/pages/dashboard.js')}}"></script>
+  <script src="{{url_for('static',filename='js/pages/dashboard.js')}}"></script>
 {% endif %}
 
 {% endblock tail_js%}

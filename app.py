@@ -1,3 +1,4 @@
+#!venv/bin/python
 import os
 from flask import Flask, url_for, redirect, render_template, request, abort
 from flask_sqlalchemy import SQLAlchemy
@@ -7,7 +8,7 @@ from flask_security.utils import encrypt_password
 import flask_admin
 from flask_admin.contrib import sqla
 from flask_admin import helpers as admin_helpers
-
+from flask_admin import BaseView, expose
 
 # Create Flask application
 app = Flask(__name__)
@@ -77,16 +78,26 @@ class MyModelView(sqla.ModelView):
                 return redirect(url_for('security.login', next=request.url))
 
 
-    can_edit = False
-    create_modal = True
+    # can_edit = True
+    edit_modal = True
+    create_modal = True    
     can_export = True
-
-class CustomView(MyModelView):
-    column_editable_list = ['email']
     can_view_details = True
-    view_details_modal = True
-    column_searchable_list = ['email']
+    details_modal = True
+
+class UserView(MyModelView):
+    column_editable_list = ['email', 'first_name', 'last_name']
+    column_searchable_list = column_editable_list
     column_exclude_list = ['password']
+    # form_excluded_columns = column_exclude_list
+    column_details_exclude_list = column_exclude_list
+    column_filters = column_editable_list
+
+
+class CustomView(BaseView):
+    @expose('/')
+    def index(self):
+        return self.render('admin/custom_index.html')
 
 # Flask views
 @app.route('/')
@@ -96,15 +107,15 @@ def index():
 # Create admin
 admin = flask_admin.Admin(
     app,
-    'Dashboard Example',
+    'My Dashboard',
     base_template='my_master.html',
     template_mode='bootstrap3',
 )
 
 # Add model views
-admin.add_view(MyModelView(Role, db.session))
-admin.add_view(CustomView(User, db.session))
-#admin.add_view(LocationVerticalView(category='Locations'))
+admin.add_view(MyModelView(Role, db.session, menu_icon_type='fa', menu_icon_value='fa-server', name="Roles"))
+admin.add_view(UserView(User, db.session, menu_icon_type='fa', menu_icon_value='fa-users', name="Users"))
+admin.add_view(CustomView(name="Custom view", endpoint='custom', menu_icon_type='fa', menu_icon_value='fa-connectdevelop',))
 
 # define a context processor for merging flask-admin's template context into the
 # flask-security views.
@@ -116,7 +127,6 @@ def security_context_processor():
         h=admin_helpers,
         get_url=url_for
     )
-
 
 def build_sample_db():
     """
